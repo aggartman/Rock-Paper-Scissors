@@ -1,0 +1,72 @@
+html {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 12px;
+    width: 100vw;
+    height: 100%;
+    margin: 40px;
+    background-color: rgb(43, 43, 44);
+    overflow-x: hidden;
+}
+body {
+    width: 75%;
+    height: 100%;
+    margin: 0 auto;
+    background-color: rgb(50, 51, 51);
+
+}
+.container {
+    display: grid;
+    height: 100%;
+    grid-template: repeat(5, auto) / repeat(3, auto);
+    align-items: center;
+}
+h1 {
+    text-align: center;
+    width: 100%;
+    font-size: 4em;
+    grid-column: 1 / 4;
+    color: lime;
+}
+.icons {
+    grid-column: 1 / 4;
+    grid-row: 2 / 4;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(2, auto) ;
+    align-self: flex-start;
+}
+.icon {
+    grid-row: 1;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    justify-self: center;
+    border: 10px groove lime;
+    background-color: rgba(0, 0, 0, 0.459);
+
+}
+.icon:active {
+    scale: 0.95;
+    opacity: 0.75;
+    background-color: black;
+}
+p {
+    font-size: 2em;
+    text-align: center;
+    color: lime;
+    grid-column: 1 / 4;
+    grid-row: 3;
+    position: relative;
+    top: 20px;
+    text-shadow: 1px 1px 2px;
+    align-self: flex-start;
+}
+.gametxt {
+    animation: blinker 2s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
