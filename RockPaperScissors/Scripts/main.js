@@ -30,45 +30,68 @@ function playerInput() {
 
 //playRound function will call computerPlay() and then PlayerInput() to obtain 
 //It takes PlayerInput as a parameter.
-function playRound() {
+function playRound(a) {
     computerPlay();
-    playerInput();
+    playerSelection = a;
     let computerWins = `Computer: ${computerSelection} Player: ${playerSelection} \n Computer Wins`;
     let playerWins = `Computer: ${computerSelection} Player: ${playerSelection} \n Player Wins`
     let TieGame =  `Computer: ${computerSelection} Player: ${playerSelection} \n It's a tie!`
     
     if (computerSelection == playerSelection) {
-        console.log(TieGame)
-        return TieGame;
+        let result = document.getElementById('results');
+        result.textContent = "It's a tie game!";
+        games++;
+        let match = document.getElementById('matches');
+        match.textContent = games;
     } else if (
         (computerSelection === 'rock' && playerSelection === 'scissors') ||
         (computerSelection === 'paper' && playerSelection === 'rock') ||
         (computerSelection === 'scissors' && playerSelection === 'paper')
         ) {
             computerScore++
-            console.log(computerWins)
-            return computerWins;
+            let result = document.getElementById('results');
+            result.textContent = 'Computer Wins';
+            games++
+            let match = document.getElementById('matches');
+            match.textContent = games
+            
     } else {
         playerScore++
-        console.log(playerWins)
-        return playerWins;
+        let result = document.getElementById('results');
+        result.textContent = 'Player Wins!';
+        let score = document.getElementById('score');
+        score.textContent = playerScore;
+        games++;
+        let match = document.getElementById('matches');
+        match.textContent = games;
     }
 }
+const rock = document.querySelector('#rock');
+const paper = document.querySelector('#paper');
+const scissors = document.querySelector('#scissors')
+
+rock.addEventListener('click', function() { playRound('rock'); }
+);
+paper.addEventListener('click', function() { playRound('paper'); }
+);
+scissors.addEventListener('click', function() { playRound('scissors'); }
+);
+
 
 // Last function is 'game' and it will use playRound 5 times and keep score.
 // Then it will report who wins and who loses. 
-function game() {
-    while (games < 6) {
-        playRound()
-        games++
-    } 
-    console.log(`Player score: ${playerScore} \n Computer Score: ${computerScore}`)
-    if (playerScore == computerScore) {
-        console.log("It's a tie match")
-    } else if (playerScore > computerScore) {
-        console.log("Player wins!")
-    } else {
-        console.log("Computer wins!")
-    }
-}
-game()
+
+// function game() {
+//     while (games < 6) {
+//         playRound()
+//         games++
+//     } 
+//     console.log(`Player score: ${playerScore} \n Computer Score: ${computerScore}`)
+//     if (playerScore == computerScore) {
+//         console.log("It's a tie match")
+//     } else if (playerScore > computerScore) {
+//         console.log("Player wins!")
+//     } else {
+//         console.log("Computer wins!")
+//     }
+// }

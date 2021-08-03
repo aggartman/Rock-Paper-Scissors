@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
-    <link rel="stylesheet" href="Styles/styles.scss">
     <link rel="stylesheet" href="Styles/styles.css">
     <link rel="icon" 
       type="image/svg" 
@@ -18,12 +17,15 @@
     <div class='container'>
         <h1 class="title">Rock Paper Scissors</h1>
         <div class="icons">
-            <img class="icon" src="images/Rock.svg" alt="Rock" draggable="false">
-            <img class="icon" src="images/Paper.svg" alt="Paper" draggable="false">
-            <img class="icon" src="images/Scissors.svg" alt="Scissors" draggable="false">
+            <img class="icon" id='rock' src="images/Rock.svg" alt="Rock" draggable="false">
+            <img class="icon" id="paper" src="images/Paper.svg" alt="Paper" draggable="false">
+            <img class="icon" id="scissors" src="images/Scissors.svg" alt="Scissors" draggable="false">
         </div>
         <p class='gametxt'>Choose your weapon</p>
+        <p id='results'></p>
+        <p id='score'></p>
+        <p id='matches'>1</p>
     </div> 
-    <!-- <script src="Scripts/main.js"></script> -->
+    <script src="Scripts/main.js"></script>
 </body>
 </html>

@@ -50,7 +50,7 @@ h1 {
     opacity: 0.75;
     background-color: black;
 }
-p {
+.gametxt {
     font-size: 2em;
     text-align: center;
     color: lime;
@@ -64,7 +64,30 @@ p {
 .gametxt {
     animation: blinker 2s linear infinite;
 }
-
+#results {
+    font-size: 2em;
+    text-align: center;
+    color: lime;
+    grid-column: 2 / 3;
+    grid-row: 4;
+    text-shadow: 1px 1px 2px;
+}
+#score {
+    font-size: 2em;
+    text-align: center;
+    color: lime;
+    grid-column: 1 / 2;
+    grid-row: 4;
+    text-shadow: 1px 1px 2px;
+}
+#matches {
+    font-size: 2em;
+    text-align: center;
+    color: lime;
+    grid-column: 3 / 4;
+    grid-row: 4;
+    text-shadow: 1px 1px 2px;
+}
 @keyframes blinker {
   50% {
     opacity: 0;
